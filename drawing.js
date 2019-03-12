@@ -71,12 +71,6 @@ function showResult() {
             case 'down':
                 direction = "down"
                 break;
-            case 'big':
-                pen.size += 10
-                break;
-            case 'small':
-                pen.size -= 10
-                break;
             default:
                 direction = "stop"
         }
