@@ -3,8 +3,7 @@
 //Clone from github.com/simmoe/p5_api_speech
 
 let myRec, browserCompatible, pen, direction, displayWord;
-
-
+// for at vise hvad der sker
 function setup() {
     cnv = createCanvas(400, 400);
     background('red');
