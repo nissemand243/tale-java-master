@@ -3,7 +3,7 @@
 //Clone from github.com/simmoe/p5_api_speech
 
 let myRec, browserCompatible, pen, direction, displayWord;
-
+//forsjov
 
 function setup() {
     cnv = createCanvas(400, 400);
