@@ -3,12 +3,8 @@
 //Clone from github.com/simmoe/p5_api_speech
 
 let myRec, browserCompatible, pen, direction, displayWord;
-<<<<<<< HEAD
 //forsjov
 
-=======
-// for at vise hvad der sker
->>>>>>> 03dc8dccdf8b763775a0be3d3071077d6050da6b
 function setup() {
     cnv = createCanvas(400, 400);
     background('red');
