@@ -34,7 +34,7 @@ function setup() {
             ellipseMode(CENTER);
             ellipse(this.x, this.y, this.size, this.size)
         },
-        bounce: function(){
+        bounce: function () {
             this.x = this.x < 0 ? 0 : this.x > width ? width : this.x;
             this.y = this.y < 0 ? 0 : this.y > width ? width : this.y;
         }
@@ -43,36 +43,37 @@ function setup() {
 }
 
 function draw() {
-    if(direction == "left") pen.x -= 1;
-    if(direction == "right") pen.x += 1;
-    if(direction == "up") pen.y -= 1;
-    if(direction == "down") pen.y += 1;
-    if(direction == "hus"){
-        if(!houseDrawing){
+    if (direction == "left") pen.x -= 1;
+    if (direction == "right") pen.x += 1;
+    if (direction == "up") pen.y -= 1;
+    if (direction == "down") pen.y += 1;
+    if (direction == "hus") {
+        if (!houseDrawing) {
             houseDrawing = true;
             timer = millis();
         }
         let time = millis() - timer;
 
-        if(time < 3000){
-            pen.x --;
+        if (time < 3000) {
+            pen.x--;
         }
-        if(time < 4500 && time > 3000){
-            pen.y --;
+        if (time < 4500 && time > 3000) {
+            pen.y--;
         }
-        if(time < 6000 && time > 4500){
-            pen.y --;
-            pen.x ++;
+        if (time < 6000 && time > 4500) {
+            pen.y--;
+            pen.x++;
         }
-        if(time < 7500 && time > 6000){
-            pen.y ++;
-            pen.x ++;
+        if (time < 7500 && time > 6000) {
+            pen.y++;
+            pen.x++;
         }
-        if(time < 9000 && time > 7500){
-            pen.y ++;
+        if (time < 9000 && time > 7500) {
+            pen.y++;
         }
-        if(time > 9000){
-            houseDrawing == false;
+        if (time > 9000) {
+            houseDrawing = false;
+            direction = "";
         }
     }
     pen.show();
@@ -80,32 +81,36 @@ function draw() {
 }
 
 function showResult() {
-    if (myRec.resultValue == true) {
-        word = myRec.resultString.split(' ').pop();
-        displayWord.html(word.toLowerCase());
-        switch (word.toLowerCase()) {
-            case 'left':
-            case 'let':
-            case 'depth':
-                direction = "left"
-                break;
-            case 'right':
-                direction = "right"
-                break;
-            case 'up':
-            case 'op':
-                direction = "up"
-                break;
-            case 'down':
-                direction = "down"
-                break;
-            case 'hus':
-                direction = "hus"
-                break;
-            default:
-                direction = "stop"
+    if (!houseDrawing) {
+        if (myRec.resultValue == true) {
+            word = myRec.resultString.split(' ').pop();
+            switch (word.toLowerCase()) {
+                case 'left':
+                case 'let':
+                case 'depth':
+                    direction = "left"
+                    break;
+                case 'right':
+                    direction = "right"
+                    break;
+                case 'up':
+                case 'op':
+                    direction = "up"
+                    break;
+                case 'down':
+                    direction = "down"
+                    break;
+                case 'hus':
+                    direction = "hus"
+                    break;
+                default:
+                    direction = "stop"
+            }
         }
+    }else{
+        word = "Drawing a house, please wait..."
     }
+    displayWord.html(word.toLowerCase());
 }
 
 
