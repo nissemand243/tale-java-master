@@ -43,8 +43,6 @@ function setup() {
 }
 
 function draw() {
-    pen.show();
-    pen.bounce();
     if(direction == "left") pen.x -= 1;
     if(direction == "right") pen.x += 1;
     if(direction == "up") pen.y -= 1;
@@ -73,7 +71,12 @@ function draw() {
         if(time < 9000 && time > 7500){
             pen.y ++;
         }
+        if(time > 9000){
+            houseDrawing == false;
+        }
     }
+    pen.show();
+    pen.bounce();
 }
 
 function showResult() {
