@@ -4,8 +4,15 @@
 
 let myRec, browserCompatible, pen, direction, displayWord, timer;
 let houseDrawing = false;
+let input;
+let analyzer;
 
 function setup() {
+
+    input = new p5.AudioIn();
+
+    input.start();
+
     cnv = createCanvas(400, 400);
     background('red');
     //Check browser compatibility
@@ -23,12 +30,14 @@ function setup() {
         myRec.start();
     }
     displayWord = createDiv();
+    
+    
 
     pen = {
         x: width / 2,
         y: height / 2,
         size: 6,
-        col: color(random(255), random(255), random(255), 150),
+        col: color(255, 255, 255, 150),
         show: function () {
             fill(this.col);
             ellipseMode(CENTER);
@@ -43,6 +52,18 @@ function setup() {
 }
 
 function draw() {
+    let volume = input.getLevel();
+    let threshold = 0.1;
+
+    if(volume > threshold && pen.size < 50){
+        pen.size = pen.size + volume * 10;
+    }
+    if(volume < 0.05 && pen.size > 6){
+        pen.size = pen.size + volume * -10;
+    }
+    if (direction == "hop"){
+        pen.size = pen.size + volume * 10;
+    }
     if (direction == "left") pen.x -= 1;
     if (direction == "right") pen.x += 1;
     if (direction == "up") pen.y -= 1;
