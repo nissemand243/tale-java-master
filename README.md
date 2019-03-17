@@ -8,3 +8,5 @@ de ord der kan bruges er:
 "left"
 "right"
 "hus"
+
+desuden har jeg implementeret at størrelsen på "pen" ændres med inputvolumet.
