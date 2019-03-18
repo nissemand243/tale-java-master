@@ -9,6 +9,6 @@ de ord der kan bruges er:
 "right"
 "hus"
 
-desuden har jeg implementeret at størrelsen på "pen" ændres med inputvolumet.
+desuden har jeg implementeret at størrelsen på "pen" ændres med inputvolumet. Det virker ikke på github siden lige nu, men går man ind og henter min kode ned og åbner en live preview af denne via visual studio code virker den fint, der er noget der forhindrer mig i at hente input volumet fra siden tilsyneladende
 
 link til siden: https://nissemand243.github.io/tale-java-master/
