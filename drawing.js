@@ -55,10 +55,10 @@ function draw() {
     let volume = input.getLevel();
     let threshold = 0.1;
 
-    if(volume > threshold && pen.size < 50){
+    if(volume > threshold && pen.size <= 50){
         pen.size = pen.size + volume * 10;
     }
-    if(volume < 0.05 && pen.size > 6){
+    if(volume < 0.05 && pen.size >= 6){
         pen.size = pen.size + volume * -10;
     }
     if (direction == "hop"){
