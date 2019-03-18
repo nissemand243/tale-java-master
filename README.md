@@ -8,3 +8,7 @@ de ord der kan bruges er:
 "left"
 "right"
 "hus"
+
+desuden har jeg implementeret at størrelsen på "pen" ændres med inputvolumet.
+
+link til siden: https://nissemand243.github.io/tale-java-master/
