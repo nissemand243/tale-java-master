@@ -61,6 +61,7 @@ function draw() {
     if(volume < 0.05 && pen.size >= 6){
         pen.size = pen.size + volume * -10;
     }
+
     if (direction == "hop"){
         pen.size = pen.size + volume * 10;
     }
